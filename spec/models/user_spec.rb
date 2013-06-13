@@ -15,6 +15,9 @@ describe User do
   it 'responds to username' do
     user.should respond_to(:username)
   end
+  it 'responds to pies' do
+    user.should respond_to(:pies)
+  end
   it 'doesnt create new user if username blank' do
     user.username = ''
     user.should_not be_valid
