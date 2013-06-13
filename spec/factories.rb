@@ -4,4 +4,10 @@ FactoryGirl.define do
     password 'supersecret'
     sequence(:username) { |n| "username_#{n}" }
   end
+
+  factory :pie do
+    sequence(:name) { |n| "pie_name_#{n}" }
+    description 'a delicious pie'
+  end
+
 end
