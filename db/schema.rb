@@ -14,6 +14,7 @@
 ActiveRecord::Schema.define(:version => 20130613212521) do
 
   create_table "pies", :force => true do |t|
+    t.integer  "user_id"
     t.string   "name"
     t.text     "description"
     t.datetime "created_at",  :null => false

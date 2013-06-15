@@ -1,13 +1,21 @@
-<div class='row-fluid text-center'>
-
-  <div class='span12'>
-    <h1>DayPie</h1>
-    <p>Bake delicious pies... And carpe diem!</p>
-    <input type='text'></input>
-    <br/>
-    <a class='btn btn-success'>Search</a>
-    <hr>
-  </div>
-
+<div class='text-center'>
+  <h1>DayPie</h1>
+  <p>Bake delicious pies... And carpe diem!</p>
+  <input type='text'></input>
+  <br/>
+  <a class='btn btn-success'>Search</a>
 </div>
 
+<hr>
+
+<% @pies.each do |pie| %>
+  <div class='row-fluid'>
+    <div class='span4'>
+      <%= image_tag asset_path 'pie.jpg' %>
+    </div>
+    <div class='span4'>
+      <h3><%= link_to pie.name, pie %></h3>
+      <p><%= pie.description %><p>
+    </div>
+  </div>
+<% end %>

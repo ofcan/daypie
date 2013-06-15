@@ -1,6 +1,8 @@
 class PiesController < ApplicationController
   
   before_filter :find_pie, :only => [:show, :edit, :update, :destroy]
+  before_filter :assert_current_user, :only => [:new, :create]
+  before_filter :assert_baker, :only => [:edit, :update, :destroy]
 
   def index
   end
@@ -14,6 +16,7 @@ class PiesController < ApplicationController
 
   def create
     @pie = Pie.new(params[:pie])
+    @pie.user = current_user
     if @pie.save
       redirect_to @pie, notice: 'Pie baked.'
     else
@@ -43,6 +46,12 @@ class PiesController < ApplicationController
 
   def find_pie
     @pie = Pie.find(params[:id])
+  end
+
+  def assert_baker
+    unless current_user && current_user.pies.include?(@pie)
+      redirect_to root_path
+    end
   end
 
 end

@@ -6,8 +6,9 @@ FactoryGirl.define do
   end
 
   factory :pie do
+    user
     sequence(:name) { |n| "pie_name_#{n}" }
-    description 'a delicious pie'
+    sequence(:description) { |n| "a delicious pie_name_#{n}" }
   end
 
 end
