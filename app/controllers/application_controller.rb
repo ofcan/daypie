@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def assert_baker
+    unless current_user && current_user.pies.include?(@pie)
+      redirect_to root_path
+    end
+  end
+
 end

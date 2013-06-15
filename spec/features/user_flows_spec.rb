@@ -1,9 +1,11 @@
 require 'spec_helper.rb'
 
 describe 'UserFlows' do
+
   before do
-    @valid_attr = FactoryGirl.attributes_for :user
+    @valid_attr = attributes_for :user
   end
+
   it 'should sign up the user given valid attributes' do
     expect {
       visit root_path

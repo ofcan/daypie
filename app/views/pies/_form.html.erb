@@ -1,0 +1,9 @@
+<%= simple_form_for @pie do |f| %>
+
+  <%= f.input :name %>
+  <%= f.input :description,
+              as: :text,
+              input_html: { rows: '5' } %>
+  <%= f.button :submit, :class => 'btn btn-primary' %>
+
+<% end %>

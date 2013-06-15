@@ -4,6 +4,10 @@
   <input type='text'></input>
   <br/>
   <a class='btn btn-success'>Search</a>
+  <%= link_to 'Bake a fresh pie!',
+              new_pie_path,
+              :id => 'new_pie',
+              :class => 'btn btn-warning' %>
 </div>
 
 <hr>
@@ -15,6 +19,7 @@
     </div>
     <div class='span4'>
       <h3><%= link_to pie.name, pie %></h3>
+      <p class='muted'>by <%= pie.user.username %></p>
       <p><%= pie.description %><p>
     </div>
   </div>

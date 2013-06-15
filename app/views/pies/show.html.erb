@@ -1,2 +1,21 @@
-<h1><%= @pie.name %></h1>
-<p><%= @pie.description %></p>
+<div class='row-fluid'>
+
+  <div class='span4'>
+    <%= image_tag asset_path 'pie.jpg' %>
+  </div>
+
+  <div class='span4'>
+    <h1><%= @pie.name %></h1>
+    <p class='muted'>by <%= @pie.user.username %></p>
+    <p><%= @pie.description %></p>
+    <%= link_to raw("<i class='icon-edit'></i>"),
+                edit_pie_path(@pie),
+                :id => "edit_pie_#{@pie.id}" if current_user && current_user.pies.include?(@pie) %>
+    <%= link_to raw('<i class="icon-remove"></i>'),
+                pie_path(@pie),
+                :method => :delete,
+                :confirm => "Are you sure you wish to destroy this sweet pie?",
+                :id => "destroy_pie_#{@pie.id}" if current_user && current_user.pies.include?(@pie) %>
+  </div>
+
+</div>
