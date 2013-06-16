@@ -11,4 +11,9 @@ FactoryGirl.define do
     sequence(:description) { |n| "a delicious pie_name_#{n}" }
   end
 
+  factory :activity do
+    sequence(:title) { |n| "pie_title_#{n}" }
+    from_time Time.now + 1
+    until_time Time.now + 2
+  end
 end

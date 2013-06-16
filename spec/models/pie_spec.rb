@@ -13,8 +13,12 @@ describe Pie do
   it 'responds to description' do
     pie.should respond_to(:description)
   end
+
   it 'responds to user' do
     pie.should respond_to(:user)
+  end
+  it 'responds to activities' do
+    pie.should respond_to(:activities)
   end
 
   it 'doesnt create new pie if user is blank' do

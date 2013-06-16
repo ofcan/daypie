@@ -17,3 +17,9 @@ user_1.pies << pie_1
 user_2.pies << pie_2
 user_2.pies << pie_3
 user_2.pies << pie_4
+
+activity_1 = Activity.create( title: 'Get the ingridients',
+                              description: 'Local store probably',
+                              from_time: Time.now + 3600,
+                              until_time: Time.now + 7200 )
+pie_1.activities << activity_1

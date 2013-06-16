@@ -14,5 +14,6 @@ class User < ActiveRecord::Base
   validates_uniqueness_of :username
 
   has_many :pies
+  has_many :activities, :through => :pies
 
 end
