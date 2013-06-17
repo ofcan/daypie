@@ -4,6 +4,8 @@ BareboneRails::Application.routes.draw do
 
   root :to => 'pages#index'
 
-  resources :pies
+  resources :pies do
+    resources :activities
+  end
 
 end

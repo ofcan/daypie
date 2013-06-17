@@ -5,9 +5,11 @@
   </div>
 
   <div class='span4'>
+
     <h1><%= @pie.name %></h1>
     <p class='muted'>by <%= @pie.user.username %></p>
     <p><%= @pie.description %></p>
+
     <%= link_to raw("<i class='icon-edit'></i>"),
                 edit_pie_path(@pie),
                 :id => "edit_pie_#{@pie.id}" if current_user && current_user.pies.include?(@pie) %>
@@ -16,6 +18,13 @@
                 :method => :delete,
                 :confirm => "Are you sure you wish to destroy this sweet pie?",
                 :id => "destroy_pie_#{@pie.id}" if current_user && current_user.pies.include?(@pie) %>
+
+    <ul>
+      <% @pie.activities.each do |activity| %>
+        <li><%= activity.title %></li>
+      <% end %>
+    </ul>
+
   </div>
 
 </div>

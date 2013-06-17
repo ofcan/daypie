@@ -12,7 +12,8 @@ FactoryGirl.define do
   end
 
   factory :activity do
-    sequence(:title) { |n| "pie_title_#{n}" }
+#    pie
+    sequence(:title) { |n| "activity_title_#{n}" }
     from_time Time.now + 1
     until_time Time.now + 2
   end

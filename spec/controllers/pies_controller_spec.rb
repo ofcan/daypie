@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe PiesController do
 
-let!(:pie) { create :pie }
-let!(:user) { create :user }
-let!(:valid_attributes) { attributes_for :pie }
+  let!(:pie) { create :pie }
+  let!(:user) { create :user }
+  let!(:valid_attributes) { attributes_for :pie }
 
   context 'success' do
 

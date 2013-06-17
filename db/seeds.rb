@@ -22,4 +22,14 @@ activity_1 = Activity.create( title: 'Get the ingridients',
                               description: 'Local store probably',
                               from_time: Time.now + 3600,
                               until_time: Time.now + 7200 )
+activity_2 = Activity.create( title: 'Bake the thing',
+                              description: 'The oven. Probably. Duh.',
+                              from_time: Time.now + 3600,
+                              until_time: Time.now + 7200 )
+activity_3 = Activity.create( title: 'Eat it!',
+                              description: 'Remember to clean afterwards.',
+                              from_time: Time.now + 3600,
+                              until_time: Time.now + 7200 )
 pie_1.activities << activity_1
+pie_1.activities << activity_2
+pie_1.activities << activity_3
